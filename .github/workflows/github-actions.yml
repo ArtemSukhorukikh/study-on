@@ -1,0 +1,12 @@
+name: Build App and Test
+on:
+  push:
+    branches:
+      - 'branch_for_ci'
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ls -a
+      - run: docker-compose up
+      - run: docker-compose exec php bin/phpunit
